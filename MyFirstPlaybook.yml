@@ -32,3 +32,15 @@
        state: started
     when: ansible_os_family =="RedHat"       
 
+  - name: i want to install tree on ubuntu
+    apt:
+      name: "{{mytreepack}}"
+      state: present
+    when: ansible_os_family =="Debian"
+
+  - name: i want to install tree on Redhat
+    yum:
+      name: "{{mytreepack}}"
+      state: present
+    when: ansible_os_family =="RedHat"        
+
