@@ -16,7 +16,7 @@
       state: present
     when: mytaskresult.stderr ==""
 
-  - name:
+  - name: install tree
     apt:
       name: tree
       state: present
