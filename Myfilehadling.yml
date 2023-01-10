@@ -17,5 +17,12 @@
       template:
         src: dynofile.j2
         dest: /var/www/html/index.html
+
+    - name: i want to download file from remote
+      get_url:
+         url: https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.15/bin/apache-tomcat-8.0.15.tar.gz
+         dest: /home/ubuntu/apache-tomcat-8.0.15.tar.gz
+         force_basic_auth: yes
+          
       
 
