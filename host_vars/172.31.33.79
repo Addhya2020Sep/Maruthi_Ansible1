@@ -1,3 +1,4 @@
 ---
 
-myjavapackredhat: java-11-openjdk
+myjavapackredhat: java-11-openjdk-devel
+                     
