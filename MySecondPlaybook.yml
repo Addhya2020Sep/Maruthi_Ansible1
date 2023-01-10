@@ -8,6 +8,13 @@
       state: present
     when: ansible_os_family =="Debian"
 
+
+  - name: i want to install java on ubuntu
+    apt: 
+      name: "{{myjavapackubuntu}}"
+      state: present
+    when: ansible_os_family =="Debian"
+
   - name: i want to install wget on Redhat
     yum:
       name: "{{mywgetpack}}"
