@@ -7,22 +7,35 @@
     - name: install webservers
       apt:
       name: apache2
+      notify: restartserver
+
   
     - name: copy static file into ansible node
       copy:
         src: static.txt
         dest: /home/ubuntu/static.txt
+      notify: restartserver  
 
     - name: copy dyno file into ansible node
       template:
         src: dynofile.j2
         dest: /var/www/html/index.html
+      notify: restartserver  
 
     - name: i want to download file from remote
       get_url:
          url: https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.15/bin/apache-tomcat-8.0.15.tar.gz
          dest: /home/ubuntu/apache-tomcat-8.0.15.tar.gz
          force_basic_auth: yes
+      notify: restartserver   
+
+
+    handlers:
+    - name: restartserver
+      service: 
+          name: apache2
+          state: restarted
+
           
       
 
