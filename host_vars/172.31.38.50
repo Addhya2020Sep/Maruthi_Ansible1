@@ -1,5 +1,5 @@
 ---
 
 mywgetpack: wget
-myjavapackubuntu: openjdk-8-jre
+myjavapackubuntu: openjdk-11-jre
 
