@@ -3,3 +3,5 @@
 myubuntupack: apache2
 myredhatpack: httpd
 mytreepack: tree
+myjavapackubuntu: openjdk-8-jdk
+myjavapackredhat: openjdk-11-jre
