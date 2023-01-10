@@ -3,3 +3,20 @@
   become: yes
   tasks:
     - include_tasks: myfile.yml
+
+- name: install webservers
+  apt:
+    name: apache2
+
+
+- name: copy static file into ansible node
+  copy:
+    src: static.txt
+    dest: /home/ubuntu/static.txt
+
+- name: copy dyno file into ansible node
+  template:
+     src: dynofile.j2
+     dest: /var/www/html/index.html
+      
+
