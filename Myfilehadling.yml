@@ -30,11 +30,11 @@
       notify: restartserver   
 
 
-    handlers:
-    - name: restartserver
-      service: 
-          name: apache2
-          state: restarted
+  handlers:
+  - name: restartserver
+    service: 
+        name: apache2
+        state: restarted
 
           
       
