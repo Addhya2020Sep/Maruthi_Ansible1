@@ -1,0 +1,16 @@
+---
+- hosts: 172.31.38.50
+  become: yes
+  tasks:
+  - name: i want to install wget on ubuntu
+    apt:
+      name: "{{mywgetpack}}"
+      state: present
+    when: ansible_os_family =="Debian"
+
+  - name: i want to install wget on Redhat
+    yum:
+      name: "{{mywgetpack}}"
+      state: present
+    when: ansible_os_family =="RedHat"
+
